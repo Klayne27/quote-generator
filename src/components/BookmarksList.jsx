@@ -75,7 +75,7 @@ function BookmarksList() {
           >
             {allCategories.map((cat) => (
               <option key={cat} value={cat}>
-                {cat.slice(0, 1).toUpperCase() + cat.slice(1)}
+                {cat?.slice(0, 1).toUpperCase() + cat?.slice(1)}
               </option>
             ))}
           </select>
@@ -103,7 +103,7 @@ function BookmarksList() {
                       - {quote.author}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 text-right">
-                      {quote.category.slice(0, 1).toUpperCase() + quote.category.slice(1)}
+                      {quote.category?.slice(0, 1).toUpperCase() + quote.category?.slice(1)}
                     </p>
                   </div>
                   <div className="flex justify-center items-center mt-10">

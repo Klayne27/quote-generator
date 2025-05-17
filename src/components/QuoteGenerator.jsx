@@ -7,7 +7,7 @@ import { FaHeart, FaRegCopy, FaRegHeart } from "react-icons/fa";
 function removeDuplicateQuotes(dataArray) {
   const seenQuotes = new Map();
   const uniqueData = [];
-  
+
   if (!Array.isArray(dataArray)) {
     console.error("Expected an array for quote data, but received:", dataArray);
     return [];
@@ -170,7 +170,7 @@ function QuoteGenerator() {
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
-                {cat.slice(0, 1).toUpperCase() + cat.slice(1)}
+                {cat?.slice(0, 1).toUpperCase() + cat?.slice(1)}
               </option>
             ))}
           </select>
