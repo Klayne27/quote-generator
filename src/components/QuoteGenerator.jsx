@@ -7,11 +7,7 @@ import { FaHeart, FaRegCopy, FaRegHeart } from "react-icons/fa";
 function removeDuplicateQuotes(dataArray) {
   const seenQuotes = new Map();
   const uniqueData = [];
-
   
-
-  
-
   if (!Array.isArray(dataArray)) {
     console.error("Expected an array for quote data, but received:", dataArray);
     return [];

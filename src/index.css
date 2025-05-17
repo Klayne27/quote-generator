@@ -15,12 +15,6 @@
     --color-light-5: #424242;
 }
 
-/* --color-light-1: #F5F5F5;
---color-light-2: #48CFCB;
---color-light-3: #229799;
---color-light-4: black;
---color-light-5: #424242; */
-
 .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #00ADB5 #F5F5F5;

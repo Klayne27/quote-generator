@@ -52,7 +52,7 @@ function BookmarksList() {
      dark:text-dark-4 flex flex-col transition-colors duration-300 pt-12"
     >
       <header className="mb-8">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-center text-light-4 dark:text-dark-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-center text-light-4 dark:text-dark-4 transition-colors">
           Bookmarked Quotes
         </h1>
       </header>
@@ -63,13 +63,13 @@ function BookmarksList() {
             type="text"
             id="authorSearchInput"
             placeholder="Search Quote..."
-            className="block w-full sm:w-auto flex-grow rounded-md bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm  p-2 px-4 text-base"
+            className="block w-full sm:w-auto flex-grow rounded-md bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm  p-2 px-4 text-base transition-colors"
             value={quoteSearchTerm}
             onChange={handleQuoteSearchChange}
           />
           <select
             id="categoryFilterSelect"
-            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto"
+            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto transition-colors"
             value={selectedCategoryFilter}
             onChange={handleCategoryFilterChange}
           >
@@ -81,7 +81,7 @@ function BookmarksList() {
           </select>
         </div>
 
-        <div className="w-full max-w-2xl mx-auto bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[65vh] custom-scrollbar transition-colors duration-300">
+        <div className=" w-full max-w-2xl mx-auto bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[65vh] custom-scrollbar transition-colors duration-300">
           {filteredBookmarks.length === 0 ? (
             <p className="text-gray-500 dark:text-gray-400 italic text-center py-8">
               {bookmarks.length === 0
@@ -96,10 +96,10 @@ function BookmarksList() {
                   className="border-b border-gray-500 dark:border-gray-500 pb-6 flex justify-between items-start  px-4 -mx-4 transition-colors duration-150"
                 >
                   <div className="flex-grow mr-4">
-                    <p className="text-lg md:text-xl italic text-gray-800 dark:text-gray-100 mb-2">
+                    <p className="text-lg md:text-xl italic text-gray-800 dark:text-gray-100 mb-2 transition-colors">
                       "{quote.quote}"
                     </p>
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-200 text-right mb-1">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-200 text-right mb-1 transition-colors">
                       - {quote.author}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 text-right">
@@ -109,7 +109,7 @@ function BookmarksList() {
                   <div className="flex justify-center items-center mt-10">
                     <button
                       onClick={() => handleRemoveBookmark(quote.id)}
-                      className="px-3 py-1 border border-red-700 text-red-700 dark:border-red-400 dark:text-red-400 rounded-md text-sm font-semibold hover:bg-red-300 dark:hover:bg-red-900 focus:outline-none cursor-pointer active:scale-90 transition duration-200"
+                      className="transition-colors px-3 py-1 border border-red-700 text-red-700 dark:border-red-400 dark:text-red-400 rounded-md text-sm font-semibold hover:bg-red-300 dark:hover:bg-red-900 focus:outline-none cursor-pointer active:scale-90 transition duration-200"
                       title="Remove from bookmarks"
                     >
                       <FaTrashAlt />

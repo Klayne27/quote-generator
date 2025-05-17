@@ -3,10 +3,12 @@ import Sidebar from "./components/Sidebar";
 import QuoteGenerator from "./components/QuoteGenerator";
 import BookmarksList from "./components/BookmarksList";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const theme = useSelector((state) => state.settings.theme);
+  // Use state to track which component should be active
+  const [activeTab, setActiveTab] = useState("generator"); // 'generator' or 'bookmarks'
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -17,14 +19,16 @@ function App() {
     }
   }, [theme]);
 
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   return (
     <div className="grid grid-cols-[1fr_7fr] bg-stone-900 h-screen text-white">
-      <Sidebar />
-      <div className="">
-        <Routes>
-          <Route path="/" element={<QuoteGenerator />} />
-          <Route path="/bookmarks" element={<BookmarksList />} />
-        </Routes>
+      <Sidebar activeTab={activeTab} onTabChange={handleTabChange} />
+      <div>
+        {activeTab === "generator" && <QuoteGenerator />}
+        {activeTab === "bookmarks" && <BookmarksList />}
       </div>
     </div>
   );
