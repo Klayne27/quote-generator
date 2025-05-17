@@ -164,7 +164,7 @@ function QuoteGenerator() {
         <div className=" w-[700px] flex justify-end items-center mb-15">
           <select
             id="categoryFilter"
-            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto"
+            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto transition-colors"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
