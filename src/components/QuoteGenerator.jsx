@@ -37,7 +37,7 @@ const uniqueQuotesData = removeDuplicateQuotes(quotesData);
 const categories = [
   "Filter by category",
   "motivational",
-  "inspirtaional",
+  "inspirational",
   "love",
   "happiness",
   "discipline",
