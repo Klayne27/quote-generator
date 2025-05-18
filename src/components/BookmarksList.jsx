@@ -56,8 +56,8 @@ function BookmarksList() {
         </h1>
       </header>
 
-      <main>
-        <div className="p-2 sm:p-0 w-full mx-2 sm:max-w-2xl sm:mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
+      <main className="">
+        <div className="p-2 sm:p-0  mx-2 sm:max-w-2xl sm:mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
           <input
             type="text"
             id="authorSearchInput"
