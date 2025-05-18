@@ -56,8 +56,8 @@ function BookmarksList() {
         </h1>
       </header>
 
-      <main className="flex-grow flex flex-col items-center">
-        <div className="p-2 w-full mx-2 sm:max-w-2xl sm:mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
+      <main>
+        <div className="p-2 sm:p-0 w-full mx-2 sm:max-w-2xl sm:mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
           <input
             type="text"
             id="authorSearchInput"
@@ -108,7 +108,7 @@ function BookmarksList() {
                   <div className="flex justify-center items-center mt-10">
                     <button
                       onClick={() => handleRemoveBookmark(quote.id)}
-                      className="transition-colors px-3 py-1 border border-red-700 text-red-700 dark:border-red-400 dark:text-red-400 rounded-md text-sm font-semibold hover:bg-red-300 dark:hover:bg-red-900 focus:outline-none cursor-pointer active:scale-90 transition duration-200"
+                      className=" px-3 py-1 border border-red-700 text-red-700 dark:border-red-400 dark:text-red-400 rounded-md text-sm font-semibold hover:bg-red-300 dark:hover:bg-red-900 focus:outline-none cursor-pointer active:scale-90 transition duration-200"
                       title="Remove from bookmarks"
                     >
                       <FaTrashAlt />
