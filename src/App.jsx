@@ -1,4 +1,3 @@
-import { Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import QuoteGenerator from "./components/QuoteGenerator";
 import BookmarksList from "./components/BookmarksList";
@@ -7,8 +6,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const theme = useSelector((state) => state.settings.theme);
-  // Use state to track which component should be active
-  const [activeTab, setActiveTab] = useState("generator"); // 'generator' or 'bookmarks'
+
+  const [activeTab, setActiveTab] = useState("generator");
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -24,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="grid grid-cols-[1fr_7fr] bg-stone-900 h-screen text-white">
+    <div className="grid sm:grid-cols-[1fr_7fr] bg-stone-900 h-screen text-white">
       <Sidebar activeTab={activeTab} onTabChange={handleTabChange} />
       <div>
         {activeTab === "generator" && <QuoteGenerator />}

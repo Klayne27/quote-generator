@@ -11,15 +11,15 @@ function Sidebar({activeTab, onTabChange}) {
   };
 
   const tabClasses =
-    "font-semibold w-60 flex justify-center items-center p-4 text-3xl transition-colors cursor-pointer";
+    "font-semibold sm:w-60 flex justify-center items-center px-2 py-3 sm:p-4 text-lg sm:text-3xl transition-colors cursor-pointer";
   
-  const activeTabClasses = "bg-light-3 dark:bg-dark-3 text-dark-4 dark:text-light-4";
+  const activeTabClasses = "bg-light-3 dark:bg-dark-3 text-light-4 dark:text-dark-4";
   const inactiveTabClasses =
     "hover:bg-light-3 dark:hover:bg-dark-3 text-light-4 dark:text-dark-4";
 
   return (
-    <div className="flex flex-col justify-between py-16 items-center relative bg-light-2 dark:bg-dark-2 transition-colors">
-      <div className="flex flex-col">
+    <div className="flex sm:flex-col justify-between sm:py-16 items-center relative bg-light-2 dark:bg-dark-2 transition-colors">
+      <div className="flex sm:flex-col">
         <div
           className={`${tabClasses} ${
             activeTab === "generator" ? activeTabClasses : inactiveTabClasses
@@ -41,15 +41,15 @@ function Sidebar({activeTab, onTabChange}) {
       <div>
         <div
           onClick={toggleTheme}
-          className="cursor-pointer active:scale-95 transition duration-200"
+          className="cursor-pointer active:scale-95 transition duration-200 text-sm sm:text-xl mr-2"
         >
-          {theme === "dark" ? (
-            <p className="flex gap-2 items-center text-xl text-dark-4">
+          {theme === "light" ? (
+            <p className="flex gap-2 items-center  text-light-4">
               <MdDarkMode />
               Dark Mode
             </p>
           ) : (
-            <p className="flex gap-2 items-center text-xl text-light-4">
+            <p className="flex gap-2 items-center  text-dark-4">
               <MdLightMode />
               Light Mode
             </p>

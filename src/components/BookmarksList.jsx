@@ -47,7 +47,6 @@ function BookmarksList() {
   return (
     <div
       className="min-h-screen bg-gradient-to-tr from-light-1 via-[#d6d6d6] to-light-2
-
       dark:bg-gradient-to-tr dark:from-dark-1 dark:via-[#282e36] dark:to-dark-2 text-light-4
      dark:text-dark-4 flex flex-col transition-colors duration-300 pt-12"
     >
@@ -58,7 +57,7 @@ function BookmarksList() {
       </header>
 
       <main className="flex-grow flex flex-col items-center">
-        <div className="w-full max-w-2xl mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
+        <div className="p-2 w-full mx-2 sm:max-w-2xl sm:mx-auto mb-6 flex flex-col sm:flex-row items-center justify-center sm:justify-end sm:space-x-2 space-y-2 sm:space-y-0">
           <input
             type="text"
             id="authorSearchInput"
@@ -69,19 +68,19 @@ function BookmarksList() {
           />
           <select
             id="categoryFilterSelect"
-            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto transition-colors"
+            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 px-3 text-base  transition-colors"
             value={selectedCategoryFilter}
             onChange={handleCategoryFilterChange}
           >
             {allCategories.map((cat) => (
-              <option key={cat} value={cat}>
+              <option key={cat} value={cat} className="text-sm sm:text-lg">
                 {cat?.slice(0, 1).toUpperCase() + cat?.slice(1)}
               </option>
             ))}
           </select>
         </div>
 
-        <div className=" w-full max-w-2xl mx-auto bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[65vh] custom-scrollbar transition-colors duration-300">
+        <div className="mx-2 sm:max-w-2xl sm:mx-auto bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[65vh] custom-scrollbar transition-colors duration-300">
           {filteredBookmarks.length === 0 ? (
             <p className="text-gray-500 dark:text-gray-400 italic text-center py-8">
               {bookmarks.length === 0

@@ -150,39 +150,37 @@ function QuoteGenerator() {
       className="min-h-screen flex flex-col transition-colors duration-300 pt-12
     text-light-4
      dark:text-dark-4
-
-    bg-gradient-to-tr from-light-1 via-[#d6d6d6] to-light-2
-
-    dark:bg-gradient-to-tr dark:from-dark-1 dark:via-[#282e36] dark:to-dark-2
+      bg-gradient-to-tr from-light-1 via-[#d6d6d6] to-light-2
+      dark:bg-gradient-to-tr dark:from-dark-1 dark:via-[#282e36] dark:to-dark-2
    "
     >
-      <h1 className="text-4xl md:text-6xl font-extrabold text-center text-light-4 dark:text-dark-4">
-        Wayne's Quote Generator
+      <h1 className="text-4xl md:text-6xl font-extrabold text-center text-light-4  dark:text-dark-4">
+        Quote Generator
       </h1>
 
-      <main className="flex-grow flex flex-col items-center justify-center mb-60">
-        <div className=" w-[700px] flex justify-end items-center mb-15">
+      <main className="flex-grow flex flex-col items-center justify-center mb-30 sm:mb-60">
+        <div className="sm:w-[700px] flex justify-end items-center mb-10 sm:mb-15">
           <select
             id="categoryFilter"
-            className="rounded-md  bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-base w-full sm:w-auto transition-colors"
+            className="rounded-md bg-light-2 dark:bg-dark-2 text-light-4 dark:text-dark-4 shadow-sm p-2 text-sm sm:text-base w-full sm:w-auto transition-colors"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
             {categories.map((cat) => (
-              <option key={cat} value={cat}>
+              <option key={cat} value={cat} className="text-xs sm:text-base">
                 {cat?.slice(0, 1).toUpperCase() + cat?.slice(1)}
               </option>
             ))}
           </select>
         </div>{" "}
-        <div className="w-full max-w-[700px] bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 pb-5  flex flex-col items-center text-center transition-colors duration-300">
+        <div className="mx-2 sm:w-full sm:max-w-[700px] bg-light-2 dark:bg-dark-2 rounded-lg shadow-xl p-6 pb-5  flex flex-col items-center text-center transition-colors duration-300">
           <div className="flex justify-center items-center mb-6 flex-grow pb-1">
-            <p className="text-xl md:text-4xl italic text-light-4 dark:text-dark-4">
-              "{currentQuote.quote}"
+            <p className="text-2xl md:text-4xl italic text-light-4 dark:text-dark-4">
+              <strong>"</strong>{currentQuote.quote}<strong>"</strong>
             </p>
           </div>
           <div className="flex justify-end w-full px-7">
-            <p className="text-2xl font-medium text-light-5 dark:text-[#b6b6b6] text-right pb-6">
+            <p className="text-lg sm:text-2xl font-medium text-light-5 dark:text-[#b6b6b6] text-right pb-6">
               - {currentQuote.author}
             </p>
           </div>
@@ -230,7 +228,7 @@ function QuoteGenerator() {
 
             <button
               onClick={() => handleNewQuote()}
-              className="px-6 py-2 bg-light-3 dark:bg-dark-3 active:scale-95 text-white font-semibold rounded-full shadow-md cursor-pointer transition text-lg"
+              className="px-6 py-2 bg-light-3 dark:bg-dark-3 active:scale-95 text-white font-semibold rounded-full shadow-md cursor-pointer transition text-md sm:text-lg"
             >
               New Quote
             </button>

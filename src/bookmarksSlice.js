@@ -3,12 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const loadBookmarks = () => {
   const savedBookmarks = localStorage.getItem("bookmarkedQuotes");
   if (!savedBookmarks) {
-    // If no item or an empty string was saved
     return [];
   }
   try {
     const parsedBookmarks = JSON.parse(savedBookmarks);
-    // Check if parsing resulted in null, undefined, or something not an array
     if (
       parsedBookmarks === null ||
       parsedBookmarks === undefined ||
@@ -18,15 +16,20 @@ const loadBookmarks = () => {
         "LocalStorage 'bookmarkedQuotes' found but was not a valid array:",
         parsedBookmarks
       );
-      return []; // Return empty array if parsing failed or result is invalid
+      return [];
     }
-    return parsedBookmarks; // Return the valid array
+    return parsedBookmarks;
   } catch (error) {
-    // Handle cases where the stored string is not valid JSON
     console.error("Error parsing 'bookmarkedQuotes' from localStorage:", error);
-    return []; // Return empty array if data is corrupted
+    return [];
   }
 };
+
+// const loadBookmarks = () => {
+//   const savedBookmarks = localStorage.getItem("bookmarkedQuotes");
+
+//   return savedBookmarks ? JSON.parse(savedBookmarks) : [];
+// };
 
 const saveBookmarks = (bookmarks) => {
   localStorage.setItem("bookmarkedQuotes", JSON.stringify(bookmarks));
